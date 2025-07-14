@@ -1,18 +1,181 @@
----
-layout: default
-title: 我的Blog
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jiaowen Yang | Home</title>
+  <!-- Materialize CSS CDN -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <style>
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid #eee;
+      margin-top: 1.5rem;
+    }
+    .card-content h1 {
+      font-size: 2.2rem;
+      margin-top: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+    .institution-icon {
+      width: 36px;
+      height: 36px;
+      object-fit: contain;
+      vertical-align: middle;
+      margin-right: 0.7em;
+      background: #fff;
+      border-radius: 3px;
+      padding: 2px;
+    }
+    .publication-title {
+      font-weight: 500;
+    }
+    .publication-meta {
+      font-size: 0.95em;
+      color: #666;
+    }
+    .card, .card-panel {
+      border-radius: 18px !important;
+    }
+    /* Dark mode styles */
+    body.dark-mode {
+      background: #181a1b !important;
+      color: #f3f3f3;
+    }
+    body.dark-mode .card, body.dark-mode .card-panel {
+      background: #23272a !important;
+      color: #f3f3f3;
+    }
+    body.dark-mode .card-title, body.dark-mode .publication-title, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
+      color: #fff !important;
+    }
+    body.dark-mode .collection-item {
+      background: #23272a !important;
+      color: #f3f3f3;
+    }
+    body.dark-mode a {
+      color: #90caf9;
+    }
+    .dark-toggle {
+      position: fixed;
+      top: 18px;
+      right: 24px;
+      z-index: 1000;
+    }
+  </style>
+</head>
+<body class="grey lighten-5" id="body">
+  <div class="dark-toggle">
+    <a class="btn-floating btn-large waves-effect waves-light grey lighten-3" id="toggle-dark" title="Toggle dark mode">
+      <i class="material-icons black-text" id="dark-icon">dark_mode</i>
+    </a>
+  </div>
+  <div class="container" style="max-width: 800px;">
+    <div class="card z-depth-2" style="margin-top: 2rem;">
+      <div class="card-content row valign-wrapper" style="margin-bottom: 0;">
+        <div class="col s12 m4 center-align">
+          <img src="IMG_0836.JPG" alt="Jiaowen Yang profile photo" class="profile-img">
+        </div>
+        <div class="col s12 m8">
+          <h1 class="black-text" style="margin-bottom: 0.3rem;">Jiaowen Yang</h1>
+          <p class="grey-text text-darken-2" style="margin-bottom: 1.2rem;">
+            I am a Research Scientist at <a href="https://www.meta.com/" target="_blank" rel="noopener">Meta Superintelligence Labs</a>, working on Llama Data. My research interests span large language models, data curation, and mathematical formalization.
+          </p>
+          <a href="https://www.linkedin.com/in/yangjiaowen/" target="_blank" rel="noopener" class="waves-effect waves-light btn blue darken-3" style="margin-right: 0.5em;"><i class="material-icons left">person</i>LinkedIn</a>
+          <a href="https://scholar.google.com/citations?user=J8tXL8AAAAAJ" target="_blank" rel="noopener" class="waves-effect waves-light btn blue lighten-1"><i class="material-icons left">school</i>Google Scholar</a>
+        </div>
+      </div>
+    </div>
 
-<h2>{{ page.title }}</h2>
+    <div class="card z-depth-1">
+      <div class="card-content">
+        <span class="card-title">Experience</span>
+        <ul class="collection">
+          <li class="collection-item avatar">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" class="circle institution-icon">
+            <span class="title"><strong>Research Scientist</strong> – Meta Superintelligence Labs (2019–Present)</span>
+            <p>Working on Llama Data</p>
+          </li>
+          <li class="collection-item avatar">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/University_of_Southern_California_logo.svg" alt="USC" class="circle institution-icon">
+            <span class="title"><strong>PhD, Mathematics</strong> – <a href="https://www.usc.edu/" target="_blank" rel="noopener">University of Southern California</a> (2015–2019)</span>
+            <p>Advisors: <a href="https://viterbi-web.usc.edu/~shanghua/" target="_blank" rel="noopener">Shang-Hua Teng</a>, <a href="https://tkl-wong.github.io/" target="_blank" rel="noopener">Ting-Kam Leonard Wong</a><br>
+            Research interests: Information Geometry & Optimal Transport</p>
+          </li>
+          <li class="collection-item avatar">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Tsinghua_University_Logo.svg" alt="Tsinghua University" class="circle institution-icon">
+            <span class="title"><strong>BSc, Mathematics</strong> – <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Tsinghua University</a> (2010–2014)</span>
+            <p><a href="http://yau-bta.com/show-86-31.html" target="_blank" rel="noopener">New World Mathematics Gold Award</a></p>
+          </li>
+        </ul>
+      </div>
+    </div>
 
-<p>List of blogs</p>
+    <div class="card z-depth-1">
+      <div class="card-content">
+        <span class="card-title">Publications</span>
+        <ul class="collection">
+          <li class="collection-item">
+            <span class="publication-title">
+              <a href="https://link.springer.com/article/10.1007/s41884-021-00053-7" target="_blank" rel="noopener">
+                Pseudo-Riemannian geometry encodes information geometry in optimal transport
+              </a>
+            </span>
+            <br>
+            <span class="publication-meta"><em>Information Geometry</em></span>
+          </li>
+          <li class="collection-item">
+            <span class="publication-title">
+              <a href="https://link.springer.com/chapter/10.1007/978-3-030-26980-7_43" target="_blank" rel="noopener">
+                Logarithmic divergences: geometry and interpretation of curvature
+              </a>
+            </span><br>
+            <span class="publication-meta"><em>Best paper, 2019 International Conference on Geometric Science of Information</em></span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
-<ul>
-
-{% for post in site.posts %}
-
-  <li>{{ post.date | date_to_string }} <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a></li>
-
-{% endfor %}
-
-</ul>
+  <!-- Materialize JS CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script>
+    // Dark mode toggle logic
+    const body = document.getElementById('body');
+    const toggleBtn = document.getElementById('toggle-dark');
+    const icon = document.getElementById('dark-icon');
+    // Set initial mode from localStorage
+    if (localStorage.getItem('theme') === 'dark') {
+      body.classList.add('dark-mode');
+      icon.textContent = 'light_mode';
+      toggleBtn.classList.remove('grey','lighten-3');
+      toggleBtn.classList.add('blue','darken-4');
+      icon.classList.remove('black-text');
+      icon.classList.add('yellow-text','text-lighten-2');
+    }
+    toggleBtn.onclick = function() {
+      body.classList.toggle('dark-mode');
+      const isDark = body.classList.contains('dark-mode');
+      if (isDark) {
+        localStorage.setItem('theme', 'dark');
+        icon.textContent = 'light_mode';
+        toggleBtn.classList.remove('grey','lighten-3');
+        toggleBtn.classList.add('blue','darken-4');
+        icon.classList.remove('black-text');
+        icon.classList.add('yellow-text','text-lighten-2');
+      } else {
+        localStorage.setItem('theme', 'light');
+        icon.textContent = 'dark_mode';
+        toggleBtn.classList.remove('blue','darken-4');
+        toggleBtn.classList.add('grey','lighten-3');
+        icon.classList.remove('yellow-text','text-lighten-2');
+        icon.classList.add('black-text');
+      }
+    };
+  </script>
+</body>
+</html> 
