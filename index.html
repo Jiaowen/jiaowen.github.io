@@ -1,6 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFGSEDBNK5"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-JFGSEDBNK5');
+    </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jiaowen Yang | Home</title>
@@ -40,39 +49,9 @@
     .card, .card-panel {
       border-radius: 18px !important;
     }
-    /* Dark mode styles */
-    body.dark-mode {
-      background: #181a1b !important;
-      color: #f3f3f3;
-    }
-    body.dark-mode .card, body.dark-mode .card-panel {
-      background: #23272a !important;
-      color: #f3f3f3;
-    }
-    body.dark-mode .card-title, body.dark-mode .publication-title, body.dark-mode h1, body.dark-mode h2, body.dark-mode h3 {
-      color: #fff !important;
-    }
-    body.dark-mode .collection-item {
-      background: #23272a !important;
-      color: #f3f3f3;
-    }
-    body.dark-mode a {
-      color: #90caf9;
-    }
-    .dark-toggle {
-      position: fixed;
-      top: 18px;
-      right: 24px;
-      z-index: 1000;
-    }
   </style>
 </head>
 <body class="grey lighten-5" id="body">
-  <div class="dark-toggle">
-    <a class="btn-floating btn-large waves-effect waves-light grey lighten-3" id="toggle-dark" title="Toggle dark mode">
-      <i class="material-icons black-text" id="dark-icon">dark_mode</i>
-    </a>
-  </div>
   <div class="container" style="max-width: 800px;">
     <div class="card z-depth-2" style="margin-top: 2rem;">
       <div class="card-content row valign-wrapper" style="margin-bottom: 0;">
@@ -143,39 +122,5 @@
   <!-- Materialize JS CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-  <script>
-    // Dark mode toggle logic
-    const body = document.getElementById('body');
-    const toggleBtn = document.getElementById('toggle-dark');
-    const icon = document.getElementById('dark-icon');
-    // Set initial mode from localStorage
-    if (localStorage.getItem('theme') === 'dark') {
-      body.classList.add('dark-mode');
-      icon.textContent = 'light_mode';
-      toggleBtn.classList.remove('grey','lighten-3');
-      toggleBtn.classList.add('blue','darken-4');
-      icon.classList.remove('black-text');
-      icon.classList.add('yellow-text','text-lighten-2');
-    }
-    toggleBtn.onclick = function() {
-      body.classList.toggle('dark-mode');
-      const isDark = body.classList.contains('dark-mode');
-      if (isDark) {
-        localStorage.setItem('theme', 'dark');
-        icon.textContent = 'light_mode';
-        toggleBtn.classList.remove('grey','lighten-3');
-        toggleBtn.classList.add('blue','darken-4');
-        icon.classList.remove('black-text');
-        icon.classList.add('yellow-text','text-lighten-2');
-      } else {
-        localStorage.setItem('theme', 'light');
-        icon.textContent = 'dark_mode';
-        toggleBtn.classList.remove('blue','darken-4');
-        toggleBtn.classList.add('grey','lighten-3');
-        icon.classList.remove('yellow-text','text-lighten-2');
-        icon.classList.add('black-text');
-      }
-    };
-  </script>
 </body>
 </html> 
