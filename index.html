@@ -1,129 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFGSEDBNK5"></script>
-    <script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-JFGSEDBNK5"></script>
+  <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
-
     gtag('config', 'G-JFGSEDBNK5');
-    </script>
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jiaowen Yang | Home</title>
-  <!-- Materialize CSS CDN -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" rel="stylesheet">
+  <!-- Google Fonts: Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
+    body {
+      font-family: 'Inter', 'Segoe UI', Arial, sans-serif;
+      background: linear-gradient(120deg, #f7fafd 0%, #eaf3fb 100%);
+      margin: 0;
+      min-height: 100vh;
+      color: #0a2540;
+      letter-spacing: 0.01em;
+    }
+    .container {
+      max-width: 700px;
+      margin: 4rem auto 2rem auto;
+      padding: 0 1.5rem;
+    }
+    .profile-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.2rem;
+      margin-bottom: 2.5rem;
+      animation: fadeIn 1.2s;
+    }
     .profile-img {
       width: 120px;
       height: 120px;
       object-fit: cover;
       border-radius: 50%;
-      border: 3px solid #eee;
-      margin-top: 1.5rem;
+      box-shadow: 0 4px 24px 0 rgba(46,144,250,0.13);
+      border: 4px solid #fff;
+      background: #fff;
+      transition: transform 0.25s;
     }
-    .card-content h1 {
-      font-size: 2.2rem;
-      margin-top: 0.5rem;
+    .profile-img:hover {
+      transform: scale(1.06) rotate(-2deg);
+      box-shadow: 0 8px 32px 0 rgba(46,144,250,0.18);
+    }
+    .name-title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -1px;
+      text-align: center;
+      color: #0a2540;
+      background: linear-gradient(90deg, #2e90fa 10%, #0a2540 90%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .subtitle {
+      color: #64748b;
+      font-size: 1.13rem;
       margin-bottom: 0.5rem;
+      text-align: center;
+      line-height: 1.7;
+      max-width: 500px;
+    }
+    .links {
+      display: flex;
+      gap: 1.1rem;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+    .btn-modern {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5em;
+      background: #2e90fa;
+      color: #fff;
+      border: none;
+      border-radius: 999px;
+      padding: 0.7em 1.5em;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      box-shadow: 0 2px 8px 0 rgba(46,144,250,0.07);
+      transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+      cursor: pointer;
+      position: relative;
+      overflow: hidden;
+    }
+    .btn-modern::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      width: 0;
+      height: 0;
+      background: rgba(255,255,255,0.2);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: width 0.3s, height 0.3s;
+      z-index: 0;
+    }
+    .btn-modern:hover {
+      background: #175cd3;
+      box-shadow: 0 4px 16px 0 rgba(46,144,250,0.13);
+      transform: translateY(-2px) scale(1.03);
+      text-decoration: none;
+    }
+    .btn-modern:active::after {
+      width: 200%;
+      height: 200%;
+      transition: 0s;
+    }
+    .section {
+      margin-bottom: 2.5rem;
+      animation: fadeInUp 1.2s;
+    }
+    .section-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.1rem;
+      letter-spacing: 0.01em;
+      color: #0a2540;
+      padding-left: 0.2em;
+      /* border-left: 4px solid #2e90fa; */ /* Removed blue strip */
+      background: none;
+    }
+    .collection {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 1.2rem;
+    }
+    .collection-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1.1em;
+      border-radius: 12px;
+      padding: 0.7em 0.7em 0.7em 0;
+      background: transparent;
+      transition: background 0.18s, box-shadow 0.18s, transform 0.13s;
+      cursor: pointer;
+      position: relative;
+    }
+    .collection-item:hover {
+      background: linear-gradient(90deg, #f0f6ff 80%, #eaf3fb 100%);
+      box-shadow: 0 2px 12px 0 rgba(46,144,250,0.07);
+      transform: translateY(-2px) scale(1.01);
     }
     .institution-icon {
-      width: 36px;
-      height: 36px;
+      width: 38px;
+      height: 38px;
       object-fit: contain;
-      vertical-align: middle;
-      margin-right: 0.7em;
+      border-radius: 10px;
       background: #fff;
-      border-radius: 3px;
-      padding: 2px;
+      box-shadow: 0 1px 4px 0 rgba(60,72,88,0.07);
+      margin-top: 0.2em;
+      flex-shrink: 0;
+      border: none;
+      transition: transform 0.2s;
     }
-    .publication-title {
-      font-weight: 500;
+    .collection-item:hover .institution-icon {
+      transform: scale(1.08) rotate(-3deg);
+    }
+    .title {
+      font-weight: 600;
+      font-size: 1.08em;
+      color: #0a2540;
+      margin-bottom: 0.2em;
+      display: block;
+    }
+    .publication-title a {
+      color: #2e90fa;
+      font-weight: 600;
+      text-decoration: none;
+      transition: color 0.15s;
+    }
+    .publication-title a:hover {
+      color: #175cd3;
+      text-decoration: underline;
     }
     .publication-meta {
-      font-size: 0.95em;
-      color: #666;
+      font-size: 0.98em;
+      color: #64748b;
+      margin-top: 0.1em;
+      display: block;
     }
-    .card, .card-panel {
-      border-radius: 18px !important;
+    @media (max-width: 700px) {
+      .container {
+        padding: 0 0.5rem;
+      }
+      .profile-header {
+        gap: 0.7rem;
+      }
+      .profile-img {
+        width: 80px;
+        height: 80px;
+      }
+      .name-title {
+        font-size: 1.5rem;
+      }
+      .section-title {
+        font-size: 1.1rem;
+      }
+    }
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-20px);}
+      to { opacity: 1; transform: none;}
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: none;}
     }
   </style>
 </head>
-<body class="grey lighten-5" id="body">
-  <div class="container" style="max-width: 800px;">
-    <div class="card z-depth-2" style="margin-top: 2rem;">
-      <div class="card-content row valign-wrapper" style="margin-bottom: 0;">
-        <div class="col s12 m4 center-align">
-          <img src="IMG_0836.JPG" alt="Jiaowen Yang profile photo" class="profile-img">
-        </div>
-        <div class="col s12 m8">
-          <h1 class="black-text" style="margin-bottom: 0.3rem;">Jiaowen Yang</h1>
-          <p class="grey-text text-darken-2" style="margin-bottom: 1.2rem;">
-            I am a Research Scientist at <a href="https://www.meta.com/" target="_blank" rel="noopener">Meta</a> Superintelligence Labs, working on Llama Data. My research interests span large language models, data curation, and mathematical formalization.
-          </p>
-          <p class="grey-text text-darken-2" style="margin-bottom: 1.2rem;">
-            I am also a General Partner managing the VC fund <a href="https://xlinnovationscapital.com/" target="_blank" rel="noopener">XLinnovations</a>.
-          </p>
-          <a href="https://www.linkedin.com/in/yangjiaowen/" target="_blank" rel="noopener" class="waves-effect waves-light btn blue darken-3" style="margin-right: 0.5em;"><i class="material-icons left">person</i>LinkedIn</a>
-          <a href="https://scholar.google.com/citations?user=J8tXL8AAAAAJ" target="_blank" rel="noopener" class="waves-effect waves-light btn blue lighten-1"><i class="material-icons left">school</i>Google Scholar</a>
-        </div>
+<body>
+  <div class="container">
+    <div class="profile-header">
+      <img src="IMG_0836.JPG" alt="Jiaowen Yang profile photo" class="profile-img">
+      <div class="name-title">Jiaowen Yang (杨佼文)</div>
+      <div class="subtitle">
+        Research Scientist at <a href="https://www.meta.com/" target="_blank" rel="noopener" style="color:#2e90fa;">Meta</a> Superintelligence Labs.<br>
+        Interests: LLM & mathematical formalization.<br>
+        I am also a General Partner at <a href="https://xlinnovationscapital.com/" target="_blank" rel="noopener" style="color:#2e90fa;">XLinnovations</a>.
+      </div>
+      <div class="links">
+        <a href="https://www.linkedin.com/in/yangjiaowen/" target="_blank" rel="noopener" class="btn-modern"><span class="material-icons">person</span>LinkedIn</a>
+        <a href="https://scholar.google.com/citations?user=J8tXL8AAAAAJ" target="_blank" rel="noopener" class="btn-modern"><span class="material-icons">school</span>Google Scholar</a>
       </div>
     </div>
 
-    <div class="card z-depth-1">
-      <div class="card-content">
-        <span class="card-title">Experience</span>
-        <ul class="collection">
-          <li class="collection-item avatar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" class="circle institution-icon">
-            <span class="title"><strong>Research Scientist</strong> – Meta Superintelligence Labs (2019–Present)</span>
-            <p>Working on Llama Data</p>
-          </li>
-          <li class="collection-item avatar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/University_of_Southern_California_logo.svg" alt="USC" class="circle institution-icon">
-            <span class="title"><strong>PhD, Mathematics</strong> – <a href="https://www.usc.edu/" target="_blank" rel="noopener">University of Southern California</a> (2015–2019)</span>
-            <p>Advisors: <a href="https://viterbi-web.usc.edu/~shanghua/" target="_blank" rel="noopener">Shang-Hua Teng</a>, <a href="https://tkl-wong.github.io/" target="_blank" rel="noopener">Ting-Kam Leonard Wong</a><br>
-            Research interests: Information Geometry & Optimal Transport</p>
-          </li>
-          <li class="collection-item avatar">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Tsinghua_University_Logo.svg" alt="Tsinghua University" class="circle institution-icon">
-            <span class="title"><strong>BSc, Mathematics</strong> – <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener">Tsinghua University</a> (2010–2014)</span>
-            <p><a href="http://yau-bta.com/show-86-31.html" target="_blank" rel="noopener">New World Mathematics Gold Award</a></p>
-          </li>
-        </ul>
-      </div>
+    <div class="section">
+      <div class="section-title">Experience</div>
+      <ul class="collection">
+        <li class="collection-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" class="institution-icon">
+          <div>
+            <span class="title">Research Scientist – Meta Superintelligence Labs (2019–Present)</span>
+            <div>Working on Llama Data</div>
+          </div>
+        </li>
+        <li class="collection-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/University_of_Southern_California_logo.svg" alt="USC" class="institution-icon">
+          <div>
+            <span class="title">PhD, Mathematics – <a href="https://www.usc.edu/" target="_blank" rel="noopener" style="color:#2e90fa;">University of Southern California</a> (2015–2019)</span>
+            <div>Advisors: <a href="https://viterbi-web.usc.edu/~shanghua/" target="_blank" rel="noopener" style="color:#2e90fa;">Shang-Hua Teng</a>, <a href="https://tkl-wong.github.io/" target="_blank" rel="noopener" style="color:#2e90fa;">Ting-Kam Leonard Wong</a><br>
+            Research: Information Geometry &amp; Optimal Transport</div>
+          </div>
+        </li>
+        <li class="collection-item">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/e/ec/Tsinghua_University_Logo.svg" alt="Tsinghua University" class="institution-icon">
+          <div>
+            <span class="title">BSc, Mathematics – <a href="https://www.tsinghua.edu.cn/en/" target="_blank" rel="noopener" style="color:#2e90fa;">Tsinghua University</a> (2010–2014)</span>
+            <div><a href="http://yau-bta.com/show-86-31.html" target="_blank" rel="noopener" style="color:#2e90fa;">New World Mathematics Gold Award</a></div>
+          </div>
+        </li>
+      </ul>
     </div>
 
-    <div class="card z-depth-1">
-      <div class="card-content">
-        <span class="card-title">Publications</span>
-        <ul class="collection">
-          <li class="collection-item">
+    <div class="section">
+      <div class="section-title">Publications</div>
+      <ul class="collection">
+        <li class="collection-item">
+          <div>
             <span class="publication-title">
               <a href="https://link.springer.com/article/10.1007/s41884-021-00053-7" target="_blank" rel="noopener">
                 Pseudo-Riemannian geometry encodes information geometry in optimal transport
               </a>
             </span>
-            <br>
             <span class="publication-meta"><em>Information Geometry</em></span>
-          </li>
-          <li class="collection-item">
+          </div>
+        </li>
+        <li class="collection-item">
+          <div>
             <span class="publication-title">
               <a href="https://link.springer.com/chapter/10.1007/978-3-030-26980-7_43" target="_blank" rel="noopener">
                 Logarithmic divergences: geometry and interpretation of curvature
               </a>
-            </span><br>
+            </span>
             <span class="publication-meta"><em>Best paper, 2019 International Conference on Geometric Science of Information</em></span>
-          </li>
-        </ul>
-      </div>
+          </div>
+        </li>
+      </ul>
     </div>
   </div>
-
-  <!-- Materialize JS CDN -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </body>
-</html> 
+</html>
