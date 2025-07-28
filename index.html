@@ -179,6 +179,10 @@
       margin-bottom: 0.2em;
       display: block;
     }
+
+    .job-title-mobile {
+      display: none;
+    }
     .publication-title a {
       color: #2e90fa;
       font-weight: 600;
@@ -212,6 +216,14 @@
       .section-title {
         font-size: 1.1rem;
       }
+      
+      .title.desktop-only {
+        display: none;
+      }
+      
+      .job-title-mobile {
+        display: block;
+      }
     }
     @keyframes fadeIn {
       from { opacity: 0; transform: translateY(-20px);}
@@ -243,14 +255,18 @@
       <div class="section-title">Experience</div>
       <ul class="collection">
         <li class="collection-item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/7/7b/Meta_Platforms_Inc._logo.svg" alt="Meta" class="institution-icon">
+          <img src="meta-logo.jpeg" alt="Meta" class="institution-icon">
           <div>
-            <span class="title">Research Scientist – Meta Superintelligence Labs (2019–Present)</span>
+            <span class="title desktop-only">Research Scientist – Meta Superintelligence Labs (2019–Present)</span>
+            <div class="job-title-mobile">
+              <span class="title">Research Scientist</span>
+              <span class="title">Meta Superintelligence Labs (2019–Present)</span>
+            </div>
             <div>Working on Llama Data</div>
           </div>
         </li>
         <li class="collection-item">
-          <img src="https://upload.wikimedia.org/wikipedia/commons/f/fe/University_of_Southern_California_logo.svg" alt="USC" class="institution-icon">
+          <img src="Southern-California-Trojans-logo-1536x864.png" alt="USC" class="institution-icon">
           <div>
             <span class="title">PhD, Mathematics – <a href="https://www.usc.edu/" target="_blank" rel="noopener" style="color:#2e90fa;">University of Southern California</a> (2015–2019)</span>
             <div>Advisors: <a href="https://viterbi-web.usc.edu/~shanghua/" target="_blank" rel="noopener" style="color:#2e90fa;">Shang-Hua Teng</a>, <a href="https://tkl-wong.github.io/" target="_blank" rel="noopener" style="color:#2e90fa;">Ting-Kam Leonard Wong</a><br>
