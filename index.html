@@ -183,6 +183,11 @@
     .job-title-mobile {
       display: none;
     }
+    
+    .job-title-mobile .title {
+      display: block;
+      margin-bottom: 0.1em;
+    }
     .publication-title a {
       color: #2e90fa;
       font-weight: 600;
@@ -223,6 +228,15 @@
       
       .job-title-mobile {
         display: block;
+      }
+      
+      .job-title-mobile .title:first-child {
+        margin-bottom: 0.05em;
+      }
+      
+      .job-title-mobile .title:last-child {
+        font-size: 1.0em;
+        color: #64748b;
       }
     }
     @keyframes fadeIn {
