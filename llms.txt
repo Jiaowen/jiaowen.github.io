@@ -1,0 +1,32 @@
+# Jiaowen Yang (杨佼文)
+
+> Research Scientist at Meta Superintelligence Labs, working on Data Governance & Privacy of LLM Training Data. PhD in Mathematics from the University of Southern California.
+
+## Current role
+
+- **Research Scientist, Meta Superintelligence Labs** (2019–Present)
+  - Leading Data Governance and Privacy initiatives for LLM training
+  - Tech Lead for Recommendation Systems in Virtual Reality
+  - Delivered Meta's first production Generative Adversarial Network system
+
+## Education
+
+- **PhD, Mathematics — University of Southern California** (2015–2019)
+  - Advisors: Shang-Hua Teng, Ting-Kam Leonard Wong
+  - Research topics: Information Geometry, Optimal Transport, Generative Adversarial Networks
+- **Visiting Researcher — École Polytechnique** (2014–2015)
+- **BSc, Mathematics — Tsinghua University** (2010–2014)
+  - New World Mathematics Gold Award
+
+## Publications
+
+- [GSI 2025] Maximum likelihood estimation for the λ-exponential family. With Xiwei Tian, Ting-Kam Leonard Wong, Jun Zhang. https://link.springer.com/chapter/10.1007/978-3-032-03918-7_11
+- [Information Geometry, 2021] Pseudo-Riemannian geometry encodes information geometry in optimal transport. With Ting-Kam Leonard Wong. https://link.springer.com/article/10.1007/s41884-021-00053-7
+- [GSI 2019, Best Paper Award] Logarithmic divergences: geometry and interpretation of curvature. With Ting-Kam Leonard Wong. https://link.springer.com/chapter/10.1007/978-3-030-26980-7_43
+
+## Links
+
+- Homepage: https://jiaowen.github.io/
+- Google Scholar: https://scholar.google.com/citations?user=J8tXL8AAAAAJ
+- LinkedIn: https://www.linkedin.com/in/yangjiaowen/
+- Email: yjwalbers@gmail.com
