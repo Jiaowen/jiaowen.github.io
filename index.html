@@ -12,14 +12,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jiaowen Yang | Home</title>
-  <meta name="description" content="Jiaowen Yang — Research Scientist at Meta Superintelligence Labs, working on Data Governance & Privacy of LLM Training Data. PhD in Mathematics from USC.">
+  <meta name="description" content="Jiaowen Yang — Research Scientist at Meta Superintelligence Labs, working on Data Strategy of LLM model training. PhD in Mathematics from USC.">
   <meta name="author" content="Jiaowen Yang">
   <link rel="canonical" href="https://jiaowen.github.io/">
 
   <!-- Open Graph -->
   <meta property="og:type" content="profile">
   <meta property="og:title" content="Jiaowen Yang">
-  <meta property="og:description" content="Research Scientist at Meta Superintelligence Labs, working on Data Governance & Privacy of LLM Training Data.">
+  <meta property="og:description" content="Research Scientist at Meta Superintelligence Labs, working on Data Strategy of LLM model training.">
   <meta property="og:url" content="https://jiaowen.github.io/">
   <meta property="og:image" content="https://jiaowen.github.io/IMG_0836.JPG">
   <meta property="profile:first_name" content="Jiaowen">
@@ -28,7 +28,7 @@
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Jiaowen Yang">
-  <meta name="twitter:description" content="Research Scientist at Meta Superintelligence Labs, working on Data Governance & Privacy of LLM Training Data.">
+  <meta name="twitter:description" content="Research Scientist at Meta Superintelligence Labs, working on Data Strategy of LLM model training.">
   <meta name="twitter:image" content="https://jiaowen.github.io/IMG_0836.JPG">
 
   <!-- JSON-LD Person schema -->
@@ -41,7 +41,7 @@
     "url": "https://jiaowen.github.io/",
     "image": "https://jiaowen.github.io/IMG_0836.JPG",
     "jobTitle": "Research Scientist",
-    "description": "Research Scientist at Meta Superintelligence Labs, working on Data Governance & Privacy of LLM Training Data.",
+    "description": "Research Scientist at Meta Superintelligence Labs, working on Data Strategy of LLM model training.",
     "worksFor": {
       "@type": "Organization",
       "name": "Meta Superintelligence Labs",
@@ -80,11 +80,11 @@
   }
   </script>
 
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Ma+Shan+Zheng&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <style>
     :root {
-      --text: #1a1a1a;
+      --text: #101828;
       --text-muted: #475569;
       --text-subtle: #94a3b8;
       --link: #2e90fa;
@@ -92,8 +92,10 @@
       --rule: #e2e8f0;
       --tag-bg: #f1f5f9;
       --tag-text: #475569;
+      --hero-bg: linear-gradient(180deg, #fbfdff 0%, #f4f8fd 70%, #ffffff 100%);
     }
     * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
       background: #ffffff;
@@ -103,199 +105,217 @@
       line-height: 1.6;
       -webkit-font-smoothing: antialiased;
     }
-    .container {
-      max-width: 720px;
-      margin: 4rem auto;
-      padding: 0 1.5rem;
-    }
-    a {
-      color: var(--link);
-      text-decoration: none;
-    }
-    a:hover {
-      text-decoration: underline;
-    }
+    a { color: var(--link); text-decoration: none; }
+    a:hover { text-decoration: underline; }
 
-    /* Header */
-    .profile-header {
+    /* ---------- hero with the manifold ---------- */
+    .hero {
+      position: relative;
+      min-height: min(92vh, 1000px);
+      background: var(--hero-bg);
+      overflow: hidden;
       display: flex;
       align-items: center;
-      gap: 1.8rem;
-      margin-bottom: 3rem;
     }
+    #manifold {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 3rem 2rem 4.5rem;
+      pointer-events: none; /* let the manifold feel the cursor everywhere… */
+    }
+    .hero-inner a, .hero-inner .profile-img { pointer-events: auto; } /* …except real controls */
+    .hero-card { max-width: 34rem; }
     .profile-img {
-      width: 110px;
-      height: 110px;
+      width: 84px;
+      height: 84px;
       object-fit: cover;
       border-radius: 50%;
-      flex-shrink: 0;
+      box-shadow: 0 4px 18px rgba(16, 24, 40, 0.12);
+      margin-bottom: 1.4rem;
     }
     .name-title {
-      font-size: 1.75rem;
-      font-weight: 700;
-      letter-spacing: -0.02em;
-      margin: 0 0 0.4rem 0;
+      font-size: clamp(2.2rem, 5vw, 3.1rem);
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      line-height: 1.12;
+      margin: 0 0 0.35rem 0;
+    }
+    .name-cn {
+      /* brush kaishu — a calligrapher's hand next to the latin name */
+      font-family: 'Ma Shan Zheng', 'Kaiti SC', 'STKaiti', 'KaiTi', cursive;
+      font-weight: 400;
+      color: #2a3342;
+      font-size: 0.8em;
+      letter-spacing: 0.05em;
+      vertical-align: 0.06em;
+      margin-left: 0.5em;
     }
     .subtitle {
       color: var(--text-muted);
-      font-size: 1rem;
-      margin: 0 0 0.9rem 0;
-      line-height: 1.55;
+      font-size: 1.08rem;
+      margin: 0.6rem 0 0.7rem;
+      line-height: 1.6;
+      max-width: 30rem;
     }
-    .links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1.2rem;
+    .subtitle b { color: var(--text); font-weight: 600; }
+    .tagline {
+      color: var(--text-subtle);
       font-size: 0.95rem;
+      margin: 0 0 1.6rem;
     }
+    .links { display: flex; flex-wrap: wrap; gap: 0.7rem; font-size: 0.95rem; }
     .links a {
       display: inline-flex;
       align-items: center;
-      gap: 0.35em;
-      font-weight: 500;
+      gap: 0.4em;
+      font-weight: 600;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.75);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 0.5em 1.05em;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      box-shadow: 0 1px 6px rgba(16, 24, 40, 0.05);
+      transition: all .2s ease;
     }
-    .links .material-icons {
-      font-size: 1.1em;
+    .links a:hover {
+      text-decoration: none;
+      color: var(--link-hover);
+      border-color: #bcd6f7;
+      box-shadow: 0 4px 14px rgba(46, 144, 250, 0.18);
+      transform: translateY(-1px);
+    }
+    .links .material-icons { font-size: 1.15em; }
+
+    .hero-hint {
+      position: absolute;
+      right: 2rem;
+      bottom: 1.4rem;
+      z-index: 2;
+      font-size: 0.8rem;
+      color: var(--text-subtle);
+      background: rgba(255,255,255,0.7);
+      border: 1px solid var(--rule);
+      border-radius: 999px;
+      padding: 0.4em 1em;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      opacity: 0;
+      transition: opacity 1s ease;
+      pointer-events: none;
+    }
+    .hero-hint.shown { opacity: 1; }
+    .scroll-cue {
+      position: absolute;
+      left: 50%;
+      bottom: 1.1rem;
+      transform: translateX(-50%);
+      z-index: 2;
+      color: var(--text-subtle);
+      animation: cueBob 2.2s ease-in-out infinite;
+      pointer-events: none;
+    }
+    @keyframes cueBob {
+      0%, 100% { transform: translateX(-50%) translateY(0); opacity: .7; }
+      50% { transform: translateX(-50%) translateY(6px); opacity: 1; }
     }
 
-    /* Sections */
-    .section {
-      margin-bottom: 2.6rem;
+    /* ---------- content ---------- */
+    .container {
+      max-width: 720px;
+      margin: 4.5rem auto;
+      padding: 0 1.5rem;
     }
+    .section { margin-bottom: 2.8rem; }
     .section-title {
-      font-size: 0.78rem;
-      font-weight: 700;
-      margin-bottom: 1.1rem;
+      font-size: 1.45rem;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      margin: 0 0 1.2rem;
       color: var(--text);
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      padding-bottom: 0.5rem;
+      padding-bottom: 0.55rem;
       border-bottom: 1px solid var(--rule);
     }
+    .reveal {
+      opacity: 0;
+      transform: translateY(18px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+    .reveal.in { opacity: 1; transform: none; }
 
-    /* Experience */
-    .collection {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1.3rem;
-    }
-    .collection-item {
-      display: flex;
-      align-items: flex-start;
-      gap: 1em;
-    }
+    .collection { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 1.3rem; }
+    .collection-item { display: flex; align-items: flex-start; gap: 1em; }
     .institution-icon {
-      width: 36px;
-      height: 36px;
-      object-fit: contain;
-      border-radius: 6px;
-      background: #fff;
-      margin-top: 0.15em;
-      flex-shrink: 0;
+      width: 36px; height: 36px; object-fit: contain; border-radius: 6px;
+      background: #fff; margin-top: 0.15em; flex-shrink: 0;
     }
-    .title {
-      font-weight: 600;
-      font-size: 1rem;
-      color: var(--text);
-      margin-bottom: 0.2em;
-      display: block;
-    }
-    .meta {
-      color: var(--text-muted);
-      font-size: 0.94rem;
-    }
-    .role-bullets {
-      margin: 0.4em 0 0 1.1em;
-      padding: 0;
-      color: var(--text-muted);
-      font-size: 0.94rem;
-    }
-    .role-bullets li {
-      margin-bottom: 0.2em;
-    }
+    .title { font-weight: 600; font-size: 1rem; color: var(--text); margin-bottom: 0.2em; display: block; }
+    .meta { color: var(--text-muted); font-size: 0.94rem; }
+    .role-bullets { margin: 0.4em 0 0 1.1em; padding: 0; color: var(--text-muted); font-size: 0.94rem; }
+    .role-bullets li { margin-bottom: 0.2em; }
 
-    /* Publications */
-    .pub-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
+    .pub-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.6rem; }
     .pub-item {
       display: flex;
       flex-direction: column;
+      padding: 0.75rem 0.9rem;
+      margin: 0 -0.9rem;
+      border-radius: 10px;
+      transition: background .25s ease, box-shadow .25s ease;
+    }
+    .pub-item:hover {
+      background: #f7fafd;
+      box-shadow: inset 0 0 0 1px #e6eefa;
     }
     .pub-venue {
-      display: inline-block;
-      font-size: 0.72rem;
-      font-weight: 700;
-      color: var(--tag-text);
-      background: var(--tag-bg);
-      padding: 0.22em 0.6em;
-      border-radius: 4px;
-      letter-spacing: 0.04em;
-      text-transform: uppercase;
-      vertical-align: 0.12em;
-      margin-right: 0.55em;
+      display: inline-block; font-size: 0.72rem; font-weight: 700;
+      color: var(--tag-text); background: var(--tag-bg);
+      padding: 0.22em 0.6em; border-radius: 4px; letter-spacing: 0.04em;
+      text-transform: uppercase; vertical-align: 0.12em; margin-right: 0.55em;
     }
-    .publication-title {
-      font-weight: 500;
-      color: var(--text);
-      line-height: 1.4;
-    }
-    .publication-title a {
-      color: var(--text);
-    }
-    .publication-title a:hover {
-      color: var(--link);
-    }
-    .publication-authors {
-      font-size: 0.92rem;
-      color: var(--text-muted);
-      margin-top: 0.2em;
-      display: block;
-    }
-    .publication-extra {
-      font-size: 0.88rem;
-      color: var(--text-subtle);
-      margin-top: 0.15em;
-      display: block;
-    }
+    .publication-title { font-weight: 500; color: var(--text); line-height: 1.4; }
+    .publication-title a { color: var(--text); }
+    .publication-title a:hover { color: var(--link); }
+    .publication-authors { font-size: 0.92rem; color: var(--text-muted); margin-top: 0.2em; display: block; }
+    .publication-extra { font-size: 0.88rem; color: var(--text-subtle); margin-top: 0.15em; display: block; }
 
-    @media (max-width: 700px) {
-      .container {
-        margin: 2rem auto;
-        padding: 0 1.2rem;
-      }
-      .profile-header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 1.2rem;
-      }
-      .profile-img {
-        width: 90px;
-        height: 90px;
-      }
-      .name-title {
-        font-size: 1.55rem;
-      }
+    @media (max-width: 720px) {
+      .hero { min-height: min(86vh, 760px); }
+      .hero-inner { padding: 2.4rem 1.3rem 4rem; }
+      #manifold { opacity: 0.55; }
+      .container { margin: 3rem auto; padding: 0 1.2rem; }
+      .pub-item { margin: 0; padding: 0.7rem 0.7rem; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .scroll-cue { animation: none; }
+      .reveal { opacity: 1; transform: none; transition: none; }
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <div class="profile-header">
-      <img src="IMG_0836.JPG" alt="Jiaowen Yang profile photo" class="profile-img">
-      <div>
-        <div class="name-title">Jiaowen Yang (杨佼文)</div>
-        <div class="subtitle">
-          Research Scientist at Meta Superintelligence Labs, working on Data Governance &amp; Privacy of LLM Training Data.
-        </div>
+  <header class="hero" id="hero">
+    <canvas id="manifold" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <div class="hero-card">
+        <img src="IMG_0836.JPG" alt="Jiaowen Yang profile photo" class="profile-img">
+        <h1 class="name-title">Jiaowen Yang<span class="name-cn">杨佼文</span></h1>
+        <p class="subtitle">
+          Research Scientist at <b>Meta Superintelligence Labs</b>, working on Data Strategy of LLM model training.
+        </p>
+        <p class="tagline">
+          PhD in Mathematics (USC) · information geometry · optimal transport
+        </p>
         <div class="links">
           <a href="mailto:yjwalbers@gmail.com" rel="me"><span class="material-icons">email</span>Email</a>
           <a href="https://scholar.google.com/citations?user=J8tXL8AAAAAJ" target="_blank" rel="me noopener"><span class="material-icons">school</span>Scholar</a>
@@ -303,21 +323,31 @@
         </div>
       </div>
     </div>
+    <div class="hero-hint" id="heroHint">move your cursor — the geodesics follow your geometry</div>
+    <div class="scroll-cue material-icons" aria-hidden="true">keyboard_arrow_down</div>
+  </header>
 
-    <div class="section">
-      <div class="section-title">Experience</div>
+  <div class="container">
+    <div class="section reveal">
+      <h2 class="section-title">Experience</h2>
       <ul class="collection">
         <li class="collection-item">
           <img src="meta-logo.jpeg" alt="Meta" class="institution-icon">
           <div>
             <span class="title">Research Scientist · Meta Superintelligence Labs (2019–Present)</span>
             <ul class="role-bullets">
-              <li>Leading Data Governance and Privacy initiatives for LLM training</li>
+              <li>Leading Data Governance Strategy for LLM training</li>
               <li>Tech Lead for Recommendation Systems in Virtual Reality</li>
               <li>Delivered Meta's first production Generative Adversarial Network system</li>
             </ul>
           </div>
         </li>
+      </ul>
+    </div>
+
+    <div class="section reveal">
+      <h2 class="section-title">Education</h2>
+      <ul class="collection">
         <li class="collection-item">
           <img src="Southern-California-Trojans-logo-1536x864.png" alt="USC" class="institution-icon">
           <div>
@@ -342,22 +372,22 @@
       </ul>
     </div>
 
-    <div class="section">
-      <div class="section-title">Publications</div>
+    <div class="section reveal">
+      <h2 class="section-title">Publications</h2>
       <ul class="pub-list">
-        <li class="pub-item">
+        <li class="pub-item" data-mode="lambda" title="Hover: the manifold sharpens into a λ-exponential family">
           <div>
             <span class="pub-venue">GSI 2025</span><span class="publication-title"><a href="https://link.springer.com/chapter/10.1007/978-3-032-03918-7_11" target="_blank" rel="noopener">Maximum likelihood estimation for the λ-exponential family</a></span>
           </div>
           <span class="publication-authors">With Xiwei Tian, <a href="https://tkl-wong.github.io/" target="_blank" rel="noopener">Ting-Kam Leonard Wong</a>, <a href="https://sites.lsa.umich.edu/m3lab/" target="_blank" rel="noopener">Jun Zhang</a></span>
         </li>
-        <li class="pub-item">
+        <li class="pub-item" data-mode="ot" title="Hover: mass moves — two wells appear, transport style">
           <div>
             <span class="pub-venue">Info. Geom. 2021</span><span class="publication-title"><a href="https://link.springer.com/article/10.1007/s41884-021-00053-7" target="_blank" rel="noopener">Pseudo-Riemannian geometry encodes information geometry in optimal transport</a></span>
           </div>
           <span class="publication-authors">With <a href="https://tkl-wong.github.io/" target="_blank" rel="noopener">Ting-Kam Leonard Wong</a></span>
         </li>
-        <li class="pub-item">
+        <li class="pub-item" data-mode="curvature" title="Hover: the surface shows its curvature">
           <div>
             <span class="pub-venue">GSI 2019</span><span class="publication-title"><a href="https://link.springer.com/chapter/10.1007/978-3-030-26980-7_43" target="_blank" rel="noopener">Logarithmic divergences: geometry and interpretation of curvature</a></span>
           </div>
@@ -367,5 +397,24 @@
       </ul>
     </div>
   </div>
+
+  <script src="assets/vendor/three.min.js"></script>
+  <script src="assets/manifold.js"></script>
+  <script>
+    /* gentle reveal-on-scroll for the CV sections */
+    (function () {
+      var els = document.querySelectorAll('.reveal');
+      if (!('IntersectionObserver' in window)) {
+        els.forEach(function (el) { el.classList.add('in'); });
+        return;
+      }
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+        });
+      }, { threshold: 0.12 });
+      els.forEach(function (el) { io.observe(el); });
+    })();
+  </script>
 </body>
 </html>
